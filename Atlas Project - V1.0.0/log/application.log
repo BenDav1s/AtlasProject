@@ -1,0 +1,3 @@
+2019-05-20 00:56:41 INFO main.Main <clinit> running graphic controller
+2019-05-20 00:56:42 INFO graphics.loginpage.LoginPageController launchPage Launching login page
+2019-05-20 00:56:45 INFO graphics.createAccountPage.CreateAccountPageController launchPage Launching create account page
