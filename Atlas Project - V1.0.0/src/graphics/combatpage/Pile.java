@@ -31,7 +31,7 @@ public class Pile extends JLayeredPane {
 	 */
 	public Pile(Card c) {
 		cards = new ArrayList<Card>();
-		this.width = 240;
+		this.width = 150;
 		c.setLocation(0, offset);
 		base = c;
 		add(base,1,0);

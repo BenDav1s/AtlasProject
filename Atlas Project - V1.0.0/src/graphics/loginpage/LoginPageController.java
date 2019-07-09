@@ -1,16 +1,25 @@
 package graphics.loginpage;
 
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import character.Player;
+import character.User;
 import combat.CombatProcess;
+import database.DatabaseAdapter;
+import gameRules.GameRules;
 import graphics.GraphicsController;
+import graphics.InvalidPopup;
 import graphics.PageController;
 import graphics.PageCreator;
-
+import statistics.Stats;
+import character.FactionTypes;
 public class LoginPageController extends PageController{
 	/** The previous page. */
 	public static final String EXIT = "exit";
@@ -35,8 +44,23 @@ public class LoginPageController extends PageController{
 		// TODO Auto-generated method stub
 		switch(e.getActionCommand()) {
 		case LOGIN:	//GraphicsController.processPage(PageCreator.HOME_PAGE, PageCreator.LOGIN_PAGE);
-			if(validateLogin())
-			GraphicsController.processPage(PageCreator.COMBAT_PAGE, PageCreator.LOGIN_PAGE);
+			try {
+				
+				if(validateLogin() && DatabaseAdapter.loginPlayer(view.getUsername().getText(), view.getPassword().getText())) {
+					try {
+						this.view.getSlideThread().stop();
+						this.view.getSlideThread().join();
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					GraphicsController.processPage(PageCreator.CHARACTER_SELECTION, PageCreator.LOGIN_PAGE);
+				}
+			} catch (SQLException e2) {
+				// TODO Auto-generated catch block
+				logger.warning("SQL EXCEPTION THROWN");
+			}
+			
 			break;
 		case EXIT:System.exit(0);
 			break;
@@ -56,6 +80,20 @@ public class LoginPageController extends PageController{
 		}
 	}
 	public boolean validateLogin() {
-		return true;
+		List<String> errors = new ArrayList<>();
+		boolean valid = true;
+		if(view.getUsername().getText().equals("")) {
+			errors.add("Please enter valid username \n");
+			valid = false;
+		}
+		if(view.getPassword().getText().equals("")) {
+			errors.add("Please enter valid password\n");
+			valid = false;
+		}
+		if(valid == false) {
+			InvalidPopup p = new InvalidPopup(this.view.getPanel(),errors);
+		}
+		
+		return valid;
 	}
 }

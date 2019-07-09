@@ -1,6 +1,12 @@
 package resources;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +31,10 @@ public class BackgroundMusic {
 	static AudioInputStream audioInputStream;
 	/** The instance. */
 	private static BackgroundMusic instance;
+	
+	private static Map<String,String> songList = new HashMap<>();
+	
+	
 	/**
 	 * Gets the single instance of BackgroundMusic.
 	 *
@@ -33,6 +43,7 @@ public class BackgroundMusic {
 	public static BackgroundMusic getInstance(){
 		if(instance == null) {
 			instance = new BackgroundMusic();
+			songList.put("loginpage.wav", "src/main/resources/audio/loginpage.wav");
 		}
 		return instance;
 	}
@@ -44,15 +55,37 @@ public class BackgroundMusic {
 	/**
 	 * Play song.
 	 */
-	private void playSong() {
-		try {
-			audioInputStream = AudioSystem.getAudioInputStream(new File("src/main/resources/audio/loginpage.wav"));
-			clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-			clip.loop(Clip.LOOP_CONTINUOUSLY);
-		}catch(Exception e) {
-			logger.warning("Background Music FAILED to play");
-		} 
+	private void playSong(String name,boolean preloaded) {
+		if(preloaded) {
+			try {
+				audioInputStream = AudioSystem.getAudioInputStream(new File("src/main/resources/audio/"+name+".wav"));
+				clip = AudioSystem.getClip();
+				clip.open(audioInputStream);
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
+			}catch(Exception e) {
+				logger.warning("Background Music FAILED to play");
+			} 
+		}
+		else {
+			try {
+				System.out.println(songList.get(name));
+				audioInputStream = AudioSystem.getAudioInputStream(new File(songList.get(name)));
+				clip = AudioSystem.getClip();
+				clip.open(audioInputStream);
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
+			}catch(Exception e) {
+				logger.warning("Background Music FAILED to play");
+			} 
+		}
+		
+	}
+	public void addSong(String name,String path) {
+		BackgroundMusic.songList.put(name,path);
+	}
+	public void switchSong(String name) {
+		stopSong();
+		status = "play";
+		playSong(name,false);
 	}
 	/**
 	 * Music.
@@ -64,7 +97,7 @@ public class BackgroundMusic {
 			status = "stop";
 		} else {
 			logger.log(Level.FINE, "Background Music started to play");
-			playSong();
+			playSong("loginpage",true);
 			status = "play";
 		}
 	}
@@ -91,6 +124,14 @@ public class BackgroundMusic {
 		}else {
 			return false;
 		}
+	}
+
+	public static Map<String,String> getSongList() {
+		return songList;
+	}
+
+	public static void setSongList(Map<String,String> songList) {
+		BackgroundMusic.songList = songList;
 	}
 	
 }

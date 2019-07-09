@@ -1,5 +1,5 @@
 package statistics;
-import character.Class;
+import character.FactionTypes;
 
 public class Effect {
 	private Type type;

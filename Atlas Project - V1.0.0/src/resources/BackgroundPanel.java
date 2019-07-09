@@ -1,5 +1,6 @@
 package resources;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -58,10 +59,16 @@ public class BackgroundPanel extends JPanel{
 		}
 		return instance;
 	}*/
-	public BackgroundPanel(Object object) {
+	public BackgroundPanel() {
 		super();
 		scaledBackground = baseImage;
 		updated = false;
+	}
+	public BackgroundPanel(String page) {
+		super();
+		scaledBackground = baseImage = ResourceManager.loadImage(page+".jpg");
+		updated = false;
+		
 	}
 	public void changeBackground(String page) {
 		if(page.equalsIgnoreCase(LOGINPAGE)) {
@@ -70,7 +77,7 @@ public class BackgroundPanel extends JPanel{
 		else {
 			scaledBackground = ResourceManager.loadImage(page);
 		}
-		this.updated = true;
+		updated = true;
 		
 	}
 	

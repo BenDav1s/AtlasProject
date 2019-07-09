@@ -1,5 +1,6 @@
 package playerGraphics;
 
+import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -7,13 +8,17 @@ import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.logging.Logger;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import character.Character;
 import combat.CombatProcess;
+import gameRules.GameRules;
 import graphicTools.Colors;
 import graphicTools.Fonts;
+import graphics.combatpage.CardPopup;
+import graphics.combatpage.CombatPageController;
 import graphics.combatpage.Pile;
 import resources.ResourceManager;
 import spells.Card;
@@ -58,6 +63,7 @@ public class ProfileBriefModel extends JPanel{
 		} catch (DBFailureException e2) {
 			logger.severe("Database failed to load other profile" + profile.getUserId());
 		}*/
+		this.setName(profile.getName());
 		this.player = profile;
 		CircularImage setIcon = null;
 		Image img1;
@@ -103,9 +109,13 @@ public class ProfileBriefModel extends JPanel{
 		this.add(health);
 		this.add(pips);
 		
+		setBorder(BorderFactory.createStrokeBorder(new BasicStroke(3.0f)));
 		//setIcon.setBounds(17, 17, 75, 75);
 		this.add(setIcon);
 		this.setVisible(true);
+	}
+	public ProfileBriefModel() {
+		// TODO Auto-generated constructor stub
 	}
 	public boolean acceptsPile(Character caster, Pile a) {
 		boolean valid = true;
@@ -121,7 +131,12 @@ public class ProfileBriefModel extends JPanel{
 			if(CombatProcess.getuserTeam().contains(this.player)) {
 				return false;
 			}else {
-				return true;
+				if(this.player.getHP() > 0) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 		}
 		
@@ -139,35 +154,21 @@ public class ProfileBriefModel extends JPanel{
 			}
 		}
 		
+		
+		
 		return valid;
 	}
-	public void updatePlayer(Character caster,Pile a) {
-		Card b = a.getBase();
-		if(b.getSpell().getType().equals(SpellType.Attack) || 
-			b.getSpell().getType().equals(SpellType.Attack_All)) {
-			this.player.doDamage(caster, b.getSpell());
-			this.health.setText((String.valueOf(player.getHP()) + "/" + String.valueOf(player.getMaxHP())));
+	public void updatePlayer(Character caster,Pile a,CombatPageController c,int count) {
+		if(a!= null) {
+			Card b = a.getBase();
+			
+			CardPopup.playCard(c.getView().getFrame(), caster, this.player, b.getSpell(),count);
+			this.repaint();
 		}
-		
-		if(b.getSpell().getType().equals(SpellType.Trap) ||
-			b.getSpell().getType().equals(SpellType.Trap_ALL)) {
-			this.player.addTrap(b.getSpell());
+		else {
+			CardPopup.pass(c.getView().getFrame(), caster,count,false);
+			this.repaint();
 		}
-		
-		if(b.getSpell().getType().equals(SpellType.Shield) || 
-			b.getSpell().getType().equals(SpellType.Shield_ALL)) {
-			this.player.addShield(b.getSpell());
-		}
-		if(b.getSpell().getType().equals(SpellType.Heal) ||
-			b.getSpell().getType().equals(SpellType.Heal_ALL)) {
-			this.player.doHeal(b.getSpell(), caster);
-			this.health.setText((String.valueOf(player.getHP()) + "/" + String.valueOf(player.getMaxHP())));
-		}
-		if(b.getSpell().getType().equals(SpellType.Blade)||
-			b.getSpell().getType().equals(SpellType.Blade_ALL)) {
-			this.player.addBlade(b.getSpell());
-		}
-		this.repaint();
 	}
 	/* (non-Javadoc)
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)

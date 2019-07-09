@@ -1,0 +1,48 @@
+﻿Name,Faction,Type,Cost,CastChance,Heal,Damgage,Resist,Boost,TargetFactions,Level req
+Call_To_Rally,The_Collective,,,,,,,,The_Collective,51
+Curse_Of_The_Fallen,The_Collective,,,,,,,,The_Collective,48
+Cursed_Mask,The_Collective,,,,,,,,The_Collective,45
+Union_Ambusher,The_Collective,,,,,,,,The_Collective,54
+Union_Automaton,The_Collective,,,,,,,,The_Collective,57
+Union_Blasters,The_Collective,,,,,,,,The_Collective,60
+Union_Builder,The_Collective,,,,,,,,The_Collective,42
+Union_Creator,The_Collective,,,,,,,,The_Collective,132
+Union_Doctor,The_Collective,,,,,,,,The_Collective,63
+Union_Enchantress,The_Collective,,,,,,,,The_Collective,12
+Union_Explorer,The_Collective,,,,,,,,The_Collective,15
+Union_Gunslinger,The_Collective,,,,,,,,The_Collective,9
+Union_Healer,The_Collective,,,,,,,,The_Collective,18
+Union_Hunter,The_Collective,,,,,,,,The_Collective,21
+Union_Initiate,The_Collective,,,,,,,,The_Collective,1
+Union_Meowbster,The_Collective,,,,,,,,The_Collective,78
+Union_Puppeteer,The_Collective,,,,,,,,The_Collective,75
+Union_Rally_Master,The_Collective,,,,,,,,The_Collective,24
+Union_Rebel,The_Collective,,,,,,,,The_Collective,66
+Union_Rejected,The_Collective,,,,,,,,The_Collective,3
+Union_Robbers,The_Collective,,,,,,,,The_Collective,27
+Union_Rogue,The_Collective,,,,,,,,The_Collective,30
+Union_Scourge,The_Collective,,,,,,,,The_Collective,6
+Union_SkyMaster,The_Collective,,,,,,,,The_Collective,75
+Union_Summoners,The_Collective,,,,,,,,The_Collective,69
+Union_Tempest,The_Collective,,,,,,,,The_Collective,33
+Union_Undead,The_Collective,,,,,,,,The_Collective,36
+Union_Visionary,The_Collective,,,,,,,,The_Collective,72
+Union_Witch_Hunters,The_Collective,,,,,,,,The_Collective,39
+Union_SkyPatrol ,,,,,,,,,,78
+Union_VoidExplorer ,,,,,,,,,,81
+Dangerous_Expedition ,,,,,,,,,,84
+Union_BorderWatch ,,,,,,,,,,87
+Union_DepthStrider ,,,,,,,,,,90
+Union_DepthGuardian ,,,,,,,,,,93
+Union_Riptide ,,,,,,,,,,96
+Union_Spark ,,,,,,,,,,99
+Union_Foundry ,,,,,,,,,,102
+Union_Consumer ,,,,,,,,,,105
+Union_SkyScourge,,,,,,,,,,108
+Union_NightStalker ,,,,,,,,,,111
+Union_SkyBattle ,,,,,,,,,,114
+Union_WorldWalker ,,,,,,,,,,117
+Union_ClockTower ,,,,,,,,,,120
+Union_SteamMaster,,,,,,,,,,123
+Union_Avatar,,,,,,,,,,126
+Union_Engineer,,,,,,,,,,129

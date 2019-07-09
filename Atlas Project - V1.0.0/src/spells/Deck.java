@@ -1,5 +1,6 @@
 package spells;
 
+import java.awt.Container;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,7 +8,8 @@ import java.util.List;
 import items.Item;
 
 public class Deck extends Item{
-	private List<Card> spells;
+	private List<Card> spells= new ArrayList<Card>();
+	private List<Card> reserveList = new ArrayList<>();
 	private int maxSize;
 	public Deck(List<Spell>spells) {
 		this.spells = new ArrayList<Card>();
@@ -23,7 +25,7 @@ public class Deck extends Item{
 		this.spells.add(new Card(s));
 	}
 	
-	public int getSize() {
+	public int getCurrentSize() {
 		return this.spells.size();
 	}
 	public Card getTop() {
@@ -41,4 +43,15 @@ public class Deck extends Item{
 		// TODO Auto-generated method stub
 		Collections.shuffle(this.spells);
 	}
+	public void setCards(List<Card> addList) {
+		// TODO Auto-generated method stub
+		this.spells = addList;
+	}
+	public List<Card> getReserveList() {
+		return reserveList;
+	}
+	public void setReserveList(List<Card> reserveList) {
+		this.reserveList = reserveList;
+	}
+	
 }

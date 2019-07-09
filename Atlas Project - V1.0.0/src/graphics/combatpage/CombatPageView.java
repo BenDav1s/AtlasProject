@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -28,7 +29,10 @@ import javax.swing.WindowConstants;
 import combat.CombatProcess;
 import gameRules.GameRules;
 import resources.BackgroundPanel;
+import resources.CustomCursor;
 import spells.Card;
+import spells.Deck;
+import spells.Spell;
 import character.Character;
 
 public class CombatPageView {
@@ -64,7 +68,7 @@ public class CombatPageView {
 		
 		//	set up frame
 		this.frame = mainFrame;
-		this.frame.setContentPane(new BackgroundPanel(null));
+		this.frame.setContentPane(new BackgroundPanel());
 		this.c = combatPageController;
 		this.frame.setLayout(new BorderLayout());
 		//	set up game area
@@ -72,7 +76,7 @@ public class CombatPageView {
 		this.gameArea.setPreferredSize(new Dimension(1080,720));
 		this.gameArea.setOpaque(false);
 		this.gameArea.setLayout(new BoxLayout(gameArea, BoxLayout.PAGE_AXIS));
-		
+		this.frame.setCursor(CustomCursor.getCursor());
 	    // Add GUI elements
 		//createTopMenu();
 		
@@ -128,22 +132,40 @@ public class CombatPageView {
 		//	set up cards from user's deck to have listeners
 		handPiles = new ArrayList<Pile>();
 		deckPile = new ArrayList<Pile>();
+		List<Spell> spells = new ArrayList<>();
 		
 		//	add cards to hand area and deck area
-		for(int i = 0; i <= GameRules.activeUser.getDeck().getCards().size(); i++) {
+		int max = GameRules.activeCharacter.getDeck().getCards().size();
+		for(int i = 0; i < max && i <6; i++) {
+			Card a = GameRules.activeCharacter.getDeck().drawCard();
+			a.addMouseListener(this.c);
+			a.addMouseMotionListener(this.c);
+			a.show();
+			Pile p = new Pile(a);
 			
-			if(i < 5 || GameRules.activeUser.getDeck().getCards().size() >=0) {
-				Card a = GameRules.activeUser.getDeck().drawCard();
-				a.addMouseListener(this.c);
-				a.addMouseMotionListener(this.c);
-				a.show();
-				Pile p = new Pile(a);
-				
-				columns.add(p);
-				handPiles.add(p);
-			}
+			columns.add(p);
+			handPiles.add(p);
 		}
-		
+		JButton pass = new JButton("Pass");
+		pass.setActionCommand("pass");
+		pass.addActionListener(this.c);
+		this.gameArea.add(pass);
+		JButton quit = new JButton("Quit");
+		quit.setActionCommand("quit");
+		quit.addActionListener(this.c);
+		this.gameArea.add(quit);
+//		add cards to hand area and deck area
+		for(Character c : q.getenemyTeam()) {
+			int maximum = c.getDeck().getCards().size();
+			for(int i = 0; i < maximum && i < 6; i++) {
+				c.drawCard();
+				
+			}/*
+			for(Card x : c.getHand()) {
+				System.out.println(c.getName() + " has " + x.getSpell().getName());
+			}*/
+		}
+			
 		//	set top column to display enemy
 		for(Character x: q.getenemyTeam()) {
 			topColumns.add(x.getProfileBrief());

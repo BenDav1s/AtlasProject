@@ -1,6 +1,7 @@
 package graphics.loginpage;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -19,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import graphicTools.Colors;
 import resources.BackgroundPanel;
+import resources.CustomCursor;
 import resources.SlideshowThread;
 
 public class LoginPageView {
@@ -43,13 +45,12 @@ public class LoginPageView {
 		this.frame = mainFrame;
 		
 		//	init panel
-		BackgroundPanel background = new BackgroundPanel(null);
+		BackgroundPanel background = new BackgroundPanel();
 		
 		this.panel = background;
-		
 		sthread = new SlideshowThread(this.panel);
 		sthread.start();
-		
+		this.frame.setCursor(CustomCursor.getCursor());
 		this.panel.setPreferredSize(new Dimension(1080, 720));
 		this.frame.setContentPane(this.panel);
 		this.frame.revalidate();
@@ -59,59 +60,61 @@ public class LoginPageView {
 		//loginbtn.setVisible(true);
 		loginbtn.setText("Login");
 		loginbtn.setPreferredSize(new Dimension(200,50));
-		loginbtn.setContentAreaFilled(false);
-		loginbtn.setFont(graphicTools.Fonts.getFont(14f));
-		loginbtn.setForeground(graphicTools.Colors.Yellow);
+		loginbtn.setBackground(new Color(0.0f,0.0f,0.0f,0.2f));
+		loginbtn.setFont(graphicTools.Fonts.getBoldFont(14f));
+		loginbtn.setForeground(Colors.Yellow);
 		loginbtn.setActionCommand("login");
 		loginbtn.addActionListener(loginController);
 		
 		JButton forgotPassbtn = new JButton("Forgot Password");
 		forgotPassbtn.setPreferredSize(new Dimension(200,50));
-		forgotPassbtn.setContentAreaFilled(false);
-		forgotPassbtn.setFont(graphicTools.Fonts.getFont(14f));
+		forgotPassbtn.setBackground(new Color(0.0f,0.0f,0.0f,0.2f));
+		forgotPassbtn.setFont(graphicTools.Fonts.getBoldFont(14f));
 		forgotPassbtn.setForeground(graphicTools.Colors.Yellow);
 		forgotPassbtn.setActionCommand("forgot");
 		forgotPassbtn.addActionListener(loginController);
 		
 		JButton createNewAccount = new JButton("Create New Account");
 		createNewAccount.setPreferredSize(new Dimension(200,50));
-		createNewAccount.setContentAreaFilled(false);
-		createNewAccount.setFont(graphicTools.Fonts.getFont(14f));
+		createNewAccount.setFont(graphicTools.Fonts.getBoldFont(14f));
+		createNewAccount.setBackground(new Color(0.0f,0.0f,0.0f,0.2f));
 		createNewAccount.setForeground(graphicTools.Colors.Yellow);
 		createNewAccount.setActionCommand("create");
 		createNewAccount.addActionListener(loginController);
 		
 		JButton exit = new JButton("Exit");
 		exit.setPreferredSize(new Dimension(200,50));
-		exit.setContentAreaFilled(false);
-		exit.setFont(graphicTools.Fonts.getFont(14f));
+		exit.setBackground(new Color(0.0f,0.0f,0.0f,0.25f));
+		exit.setFont(graphicTools.Fonts.getBoldFont(14f));
 		exit.setForeground(graphicTools.Colors.Yellow);
 		exit.setActionCommand("exit");
 		exit.addActionListener(loginController);
 		
-		JLabel user = new JLabel("Username");
-		user.setFont(graphicTools.Fonts.getFont((float) 14));
+		JLabel user = new JLabel("Username:");
+		user.setFont(graphicTools.Fonts.getBoldFont((float) 14));
 		user.setForeground(graphicTools.Colors.Yellow);
-		
 		JTextField userbtn = new JTextField();
-		userbtn.setFont(graphicTools.Fonts.getFont(12f));
-		userbtn.setForeground(graphicTools.Colors.White);
+		userbtn.setFont(graphicTools.Fonts.getBoldFont(14f));
+		//userbtn.setForeground(graphicTools.Colors.Yellow);
+		userbtn.setPreferredSize(new Dimension(200,50));
+		this.setUsername(userbtn);
 		
-		JLabel pass = new JLabel("Password");
-		pass.setFont(graphicTools.Fonts.getFont((float) 14));
+		JLabel pass = new JLabel("Password:");
+		pass.setFont(graphicTools.Fonts.getBoldFont((float) 14));
 		pass.setForeground(graphicTools.Colors.Yellow);
-		
 		JPasswordField passbtn = new JPasswordField();
-		passbtn.setFont(graphicTools.Fonts.getFont(12f));
+		passbtn.setFont(graphicTools.Fonts.getBoldFont(14f));
+		passbtn.setPreferredSize(new Dimension(200,50));
 		this.setPassword(passbtn);
 		
 		
-		this.panel.setLayout(new GridLayout(3,6));
+		this.panel.setLayout(new GridLayout(3,4));
 		
 		
 		JPanel buttonHolder = new JPanel();
-		GridLayout layout = new GridLayout(8,1);
-		layout.setVgap(15);
+		buttonHolder.setBackground(new Color(0.0f,0.0f,0.0f,0.5f));
+		GridLayout layout = new GridLayout(7,1);
+		layout.setVgap(5);
 		buttonHolder.setLayout(layout);
 		buttonHolder.setName("button");
 		
@@ -122,15 +125,13 @@ public class LoginPageView {
 		buttonHolder.add(loginbtn);
 		buttonHolder.add(createNewAccount);
 		buttonHolder.add(forgotPassbtn);
-		buttonHolder.setOpaque(false);
 		buttonHolder.setPreferredSize(new Dimension(500,300));
-		buttonHolder.repaint();
 		//this.panel.add(loginbtn);
 		
-		for(int i  = 0; i < 6; i++) {
+		for(int i  = 0; i < 4; i++) {
 			this.panel.add(new JLabel());
 		}
-		for(int i  =0; i < 4; i++) {
+		for(int i  =0; i < 2; i++) {
 			this.panel.add(new JLabel());
 		}
 		
@@ -145,9 +146,8 @@ public class LoginPageView {
 		tempHolder.add(exit);
 		tempHolder.setOpaque(false);
 		tempHolder.setPreferredSize(new Dimension(400,300));
-		tempHolder.repaint();
 		this.panel.add(tempHolder);
-		for(int i  = 0; i < 5; i++) {
+		for(int i  = 0; i < 3; i++) {
 			this.panel.add(new JLabel());
 		}
 		

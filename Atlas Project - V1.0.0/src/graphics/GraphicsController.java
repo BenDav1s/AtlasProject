@@ -1,8 +1,11 @@
 package graphics;
 
 import java.awt.Dimension;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -13,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
+import database.DatabaseAdapter;
 import resources.BackgroundPanel;
 import resources.ResourceManager;
 import spells.Card;
@@ -23,7 +27,7 @@ import spells.Spell;
  * The Class GraphicsController.
  * @author BeMyPlayer2 Team
  */
-public class GraphicsController implements Runnable {
+public class GraphicsController implements Runnable, WindowListener {
 
 	/** The Constant ACTIVE_ACCOUNT. */
 	private static final String ACTIVE_ACCOUNT = "active account";
@@ -50,7 +54,7 @@ public class GraphicsController implements Runnable {
 			mainFrame.setSize(1080, 720);
 			mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			mainFrame.setLocationRelativeTo(null);
-			
+			mainFrame.addWindowListener(this);
 			try {
 			
 				ImageIcon icon = new ImageIcon(ResourceManager.loadImage("app_icon.jpg"));
@@ -117,6 +121,53 @@ public class GraphicsController implements Runnable {
 
 	@Override
 	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		try {
+			DatabaseAdapter.logout();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			//e1.printStackTrace();
+		}
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
 		// TODO Auto-generated method stub
 		
 	}

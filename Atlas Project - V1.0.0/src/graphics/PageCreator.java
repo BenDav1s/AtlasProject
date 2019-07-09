@@ -1,10 +1,19 @@
 package graphics;
 
+import graphics.bountypage.BountyPageController;
+import graphics.characterSelectionPage.CharacterSelectionController;
 import graphics.combatpage.CombatPageController;
 import graphics.createAccountPage.CreateAccountPageController;
+import graphics.createCharacterPage.CharacterCreationController;
 import graphics.forgotPasswordPage.ForgotPasswordPageController;
 import graphics.homepage.HomePageController;
+import graphics.inventoryPage.InventoryPageController;
 import graphics.loginpage.LoginPageController;
+import graphics.musicPage.MusicPageController;
+import graphics.onlinePage.OnlinePageController;
+import graphics.optionsPage.OptionsPageController;
+import graphics.profilePage.ProfilePageController;
+import graphics.storyPage.StoryPageController;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -50,7 +59,21 @@ public class PageCreator{
 	public static final String CREDITS_PAGE = "credits page";
 
 	public static final String COMBAT_PAGE = "combat page";
+
+	public static final String OPTIONS = "options page";
+
+	public static final String STORY_MODE = "story mode page";
+
+	public static final String INVENTORY_PAGE = "inventory page";
 	
+	public static final String ONLINE_PAGE = "online page";
+	
+	public static final String CHARACTER_SELECTION = "character selection page";
+	
+	public static final String Bounty_Page = "bounty page";
+
+	public static final String MUSIC_PAGE = "music page";
+	public static final String Character_Creation = "creation page";
 	/**
 	 * Gets the page.
 	 *
@@ -64,6 +87,15 @@ public class PageCreator{
 		case COMBAT_PAGE: return new CombatPageController();
 		case CREATE_ACCOUNT_PAGE: return new CreateAccountPageController();
 		case FORGOT_PASSWORD_PAGE : return new ForgotPasswordPageController();
+		case INVENTORY_PAGE : return new InventoryPageController();
+		case ONLINE_PAGE: return new OnlinePageController();
+		case PROFILE_PAGE: return new ProfilePageController();
+		case STORY_MODE : return new StoryPageController();
+		case OPTIONS: return new OptionsPageController();
+		case CHARACTER_SELECTION: return new CharacterSelectionController();
+		case Bounty_Page : return new BountyPageController();
+		case MUSIC_PAGE : return new MusicPageController();
+		case Character_Creation : return new CharacterCreationController();
 		default: return null;
 		}
 	}

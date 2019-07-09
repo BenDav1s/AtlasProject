@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.swing.JPanel;
-import character.Class;
+import character.FactionTypes;
 import graphicTools.Colors;
 public class CircleTest extends JPanel{
 	private static final int SIZE = 256;
@@ -19,9 +19,9 @@ public class CircleTest extends JPanel{
     private int b = a;
     private int r = 4 * SIZE / 5;
     private int n;
-    private Map<Point,Class> factionMap;
-    private Class [] factions = {Class.The_Called,Class.The_Children_Of_The_Mask,Class.The_Collective,
-    							Class.The_Cult_Of_The_Stars,Class.The_Ennead,Class.The_Legion,Class.The_Ritualists};
+    private Map<Point,FactionTypes> factionMap;
+    private FactionTypes [] factions = {FactionTypes.The_Called,FactionTypes.The_Children_Of_The_Mask,FactionTypes.The_Collective,
+    							FactionTypes.The_Cult_Of_The_Stars,FactionTypes.The_Ennead,FactionTypes.The_Legion,FactionTypes.The_Ritualists};
     private Color [] colors = {Color.black,Color.blue,Color.cyan,Color.gray,Color.red,Color.yellow,Color.green};
     /** @param n  the desired number of circles. */
     public CircleTest(int n) {
@@ -33,16 +33,19 @@ public class CircleTest extends JPanel{
     /*
      * validPoint
      * given point on screen where clicked, returns the closest node to it, if there is one
-     * uses a hashmap of distances and classes, adding to the hashmap, those with a minimum distance of 10 from each node
+     * uses a hashmap of distances and classes, adding to the hashmap, those with a minimum distance of 8 from each node
      */
-    public Class validPoint(Point p) {
-    	Map<Double, Class> minDist = new HashMap<>();
-    	Class faction = null;
+    public FactionTypes validPoint(Point p) {
+    	Map<Double, FactionTypes> minDist = new HashMap<>();
+    	FactionTypes faction = null;
     	for(Point d: factionMap.keySet()) {
-    		double distance = Math.sqrt(Math.abs(p.x-d.x)^2 + Math.abs(p.y-d.y)^2);
-    		if(distance < 10) {
-    			minDist.put(Double.valueOf(distance),factionMap.get(d));
+    		if(Math.abs(d.x-p.x) > 0 && Math.abs(d.x-p.x) < 22) {
+    			if(Math.abs(d.y-p.y) > 0 && Math.abs(d.y - p.y) < 22) {
+    				double distance = Math.sqrt(Math.abs(p.x-d.x)^2 + Math.abs(p.y-d.y)^2);
+    	    		minDist.put(Double.valueOf(distance),factionMap.get(d));
+    			}
     		}
+    		
     	}
     	if(minDist.size()==0) {
     		return null;
@@ -72,16 +75,16 @@ public class CircleTest extends JPanel{
             double t = 2 * Math.PI * i / n;
             int x = (int) Math.round(a + r * Math.cos(t));
             int y = (int) Math.round(b + r * Math.sin(t));
-            factionMap.put(new Point(x-r2,y-r2),this.factions[i]);
+            factionMap.put(new Point(x,y),this.factions[i]);
             g2d.fillOval(x - r2, y - r2, 2 * r2, 2 * r2);
         }
     }
 
-	public Map<Point, Class> getFactionMap() {
+	public Map<Point, FactionTypes> getFactionMap() {
 		return factionMap;
 	}
 
-	public void setFactionMap(Map<Point, Class> factionMap) {
+	public void setFactionMap(Map<Point, FactionTypes> factionMap) {
 		this.factionMap = factionMap;
 	}
 }

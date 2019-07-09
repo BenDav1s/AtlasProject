@@ -17,4 +17,6 @@ public class Colors {
 	
 	/** The White. */
 	public static Color White = new Color(255,255,255);
+	
+	public static Color DarkGreen = new Color(55,73,67);
 }

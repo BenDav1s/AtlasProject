@@ -1,0 +1,30 @@
+﻿Name,Faction,Type,Cost,CastChance,Heal,Damgage,Resist,Boost,TargetFactions,Level req
+The_Called_Shield,The_Called ,Shield ,0,1,0,0,0.75,0,The_Called,1
+The_Called_Blade,The_Called ,Blade,0,1,0,0,0,0.35,The_Called,1
+The_Called_Trap,The_Called ,Trap,0,1,0,0,0,0.35,The_Called,1
+The_Children_Of_The_Mask_Shield,The_Children_Of_The_Mask,Shield ,0,1,0,0,0.75,0,The_Children_Of_The_Mask,1
+The_Children_Of_The_Mask_Blade,The_Children_Of_The_Mask,Blade,0,1,0,0,0,0.35,The_Children_Of_The_Mask,1
+The_Children_Of_The_Mask_Trap,The_Children_Of_The_Mask,Trap_All,0,1,0,0,0,0.2,Generic,1
+The_Collective_Shield,The_Collective,Shield ,0,1,0,0,0.75,0,The_Collective,1
+The_Collective_Blade,The_Collective,Blade,0,1,0,0,0,0.4,The_Collective,1
+The_Collective_Trap,The_Collective,Trap,0,1,0,0,0,0.2,The_Collective,1
+The_Ennead_Shield,The_Ennead,Shield ,0,1,0,0,0.75,0,The_Ennead,1
+The_Ennead_Blade,The_Ennead,Blade,0,1,0,0,0,0.4,The_Ennead,1
+The_Ennead_Trap,The_Ennead,Trap,0,1,0,0,0,0.3,The_Ennead,1
+The_Legion_Shield,The_Legion,Shield_All,1,1,0,0,0.5,0,Generic,1
+The_Legion_Blade,The_Legion,Blade,0,1,0,0,0,0.4,The_Legion,1
+The_Legion_Trap,The_Legion,Trap,0,1,0,0,0,0.3,The_Legion,1
+The_Ritualists_Shield,The_Ritualists ,Shield,0,1,0,0,0.75,0,The_Ritualists,1
+The_Ritualists_Blade,The_Ritualists ,Blade,0,1,0,0,0,0.4,The_Ritualists,1
+The_Ritualists_Trap,The_Ritualists ,Trap,0,1,0,0,0,0.3,The_Ritualists,1
+The_Cult_Of_The_Stars_Shield,The_Cult_Of_The_Stars,Shield_All,0,1,0,0,0.35,0,Generic,1
+The_Cult_Of_The_Stars_Blade,The_Cult_Of_The_Stars,Blade_All,1,1,0,0,0,0.4,Generic,1
+The_Cult_Of_The_Stars_Trap,The_Cult_Of_The_Stars,Trap_All,1,1,0,0,0,0.3,Generic,1
+Generic_Shield,Generic,Shield,0,1,0,0,0.5,0,Generic,1
+The_Called_Melee,The_Called ,Attack,1,1,0,90,0,0,The_Called ,1
+The_Children_Of_The_Mask_Melee,The_Children_Of_The_Mask,Attack,1,1,0,90,0,0,The_Children_Of_The_Mask,1
+The_Collective_Melee,The_Collective,Attack,1,1,0,90,0,0,The_Collective,1
+The_Ennead_Melee,The_Ennead,Attack,1,1,0,90,0,0,The_Ennead,1
+The_Legion_Melee,The_Legion,Attack,1,1,0,90,0,0,The_Legion,1
+The_Ritualists_Melee,The_Ritualists ,Attack,1,1,0,90,0,0,The_Ritualists ,1
+The_Cult_Of_The_Stars_Melee,The_Cult_Of_The_Stars,Attack,1,1,0,90,0,0,The_Cult_Of_The_Stars,1

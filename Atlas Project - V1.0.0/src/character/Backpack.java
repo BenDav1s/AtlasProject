@@ -1,11 +1,12 @@
 package character;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import items.Item;
 
 public class Backpack {
-	private List<Item> items;
+	private List<Item> items = new ArrayList<>();
 	private int maxSize;
 	public List<Item> getItems() {
 		return items;

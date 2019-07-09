@@ -8,22 +8,22 @@ import java.awt.image.BufferedImage;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import character.Class;
+import character.FactionTypes;
 import graphicTools.Colors;
 import graphicTools.Fonts;
 import resources.ResourceManager;
 public class FactionLeftPanel extends JPanel{
-	private Class factionName;
+	private FactionTypes factionName;
 	private JLabel text;
 	
 	//	denotes combat style
-	public FactionLeftPanel(Class c) {
+	public FactionLeftPanel(FactionTypes c) {
 		if(c != null) {
 			this.factionName = c;
 			this.setLayout(new GridLayout(1,2));
 			JLabel name = new JLabel(factionName.name());
 			name.setFont(Fonts.getFont(13f));
-			name.setSize(new Dimension(100,50));
+			name.setSize(new Dimension(300,50));
 			name.setForeground(Colors.Yellow);
 			this.add(name);
 			this.text= new JLabel(ResourceManager.loadText(c.name()+ "_factionFlavor.txt"));
@@ -32,26 +32,26 @@ public class FactionLeftPanel extends JPanel{
 			this.text.setForeground(Colors.Yellow);
 			this.add(this.text);
 			
-			setPreferredSize(new Dimension(100,145));
-			setSize(new Dimension(100, 145));
+			//setPreferredSize(new Dimension(100,145));
 			this.setVisible(true);
 			setOpaque(false);
+			this.repaint();
+			System.out.println("a" + this.getSize());
 		}
 		else {
-			
 			this.setVisible(true);
 			this.setOpaque(false);
 		}
 		
 		
 	}
-	public void switchFaction(Class c) {
+	public void switchFaction(FactionTypes c) {
 		this.removeAll();
 		this.factionName = c;
 		this.setLayout(new GridLayout(1,2));
 		JLabel name = new JLabel(factionName.name());
 		name.setFont(Fonts.getFont(13f));
-		name.setSize(new Dimension(100,50));
+		name.setSize(new Dimension(300,50));
 		name.setForeground(Colors.Yellow);
 		this.add(name);
 		this.text= new JLabel(ResourceManager.loadText(c.name()+ "_factionFlavor.txt"));

@@ -18,10 +18,12 @@ import javax.swing.JTextField;
 
 import resources.BackgroundPanel;
 import resources.CircleTest;
+import resources.CustomCursor;
 import resources.Faction;
-import character.Class;
+import character.FactionTypes;
 import graphicTools.Colors;
 import graphicTools.Fonts;
+import graphics.createCharacterPage.CharacterCreationController;
 public class CreateAccountPageView {
 	private JFrame frame;
 	private JPanel panel;
@@ -108,10 +110,10 @@ public class CreateAccountPageView {
 		
 		this.frame = mainFrame;
 		
-		this.frame.setContentPane(this.panel = new BackgroundPanel(null));
+		this.frame.setContentPane(this.panel = new BackgroundPanel());
 		this.panel.setPreferredSize(new Dimension(1080,720));
 		this.frame.setLayout(new BorderLayout());
-		
+		this.frame.setCursor(CustomCursor.getCursor());
 		
 		this.frame.setContentPane(this.panel);
 		this.frame.revalidate();
@@ -141,7 +143,7 @@ public class CreateAccountPageView {
 		
 		JTextField userbtn = new JTextField();
 		userbtn.setFont(graphicTools.Fonts.getFont(12f));
-		userbtn.setForeground(graphicTools.Colors.White);
+		userbtn.setForeground(graphicTools.Colors.Yellow);
 		this.setUsername(userbtn);
 		
 		JLabel email = new JLabel("Email");
@@ -150,7 +152,7 @@ public class CreateAccountPageView {
 		
 		JTextField emailbtn = new JTextField();
 		emailbtn.setFont(graphicTools.Fonts.getFont(12f));
-		emailbtn.setForeground(graphicTools.Colors.White);
+		emailbtn.setForeground(graphicTools.Colors.Yellow);
 		this.setEmail(userbtn);
 		
 		JLabel pass = new JLabel("Password");
@@ -176,6 +178,7 @@ public class CreateAccountPageView {
 		gender.setToolTipText("Gender");
 		gender.setModel(new DefaultComboBoxModel<String>(new String[] {"Male", "Female"}));
 		gender.setVisible(true);
+		gender.setSelectedItem("Male");
 		this.setGender(gender);
 		
 		JComboBox<String> securityQuestions = new JComboBox<String>();
@@ -198,7 +201,7 @@ public class CreateAccountPageView {
 		GridLayout layout = new GridLayout(8,1);
 		//	holds user name and password info
 		JPanel leftHolder = new JPanel();
-		layout.setVgap(7);
+		layout.setVgap(5);
 		leftHolder.setLayout(layout);
 		leftHolder.add(user);
 		leftHolder.add(userbtn);
@@ -271,6 +274,9 @@ public class CreateAccountPageView {
 		//pack and make visible
 		this.frame.pack();
 		this.frame.setVisible(true);
+	}
+	public CreateAccountPageView() {
+		// TODO Auto-generated constructor stub
 	}
 	public JComboBox getGender() {
 		return gender;

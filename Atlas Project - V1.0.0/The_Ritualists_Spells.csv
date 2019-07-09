@@ -1,0 +1,46 @@
+﻿Name,Faction,Type,Cost,CastChance,Heal,Damgage,Resist,Boost,TargetFactions,Level req
+Fallen_Hunter,,The_Ritualists,,,,,,,The_Ritualists,51
+Fallen_Initate,,The_Ritualists,,,,,,,The_Ritualists,1
+Fallen_Master,,The_Ritualists,,,,,,,The_Ritualists,54
+Fallen_Summoner,,The_Ritualists,,,,,,,The_Ritualists,57
+Farseek,,The_Ritualists,,,,,,,The_Ritualists,48
+Ritual_Avatar,,The_Ritualists,,,,,,,The_Ritualists,126
+Ritual_Avatar_Of_Creation,,The_Ritualists,,,,,,,The_Ritualists,132
+Ritual_BalanceMaster,,The_Ritualists,,,,,,,The_Ritualists,117
+Ritual_BeastTamer,,The_Ritualists,,,,,,,The_Ritualists,129
+Ritual_BloodMaster,,The_Ritualists,,,,,,,The_Ritualists,111
+Ritual_BloodSeeker,,The_Ritualists,,,,,,,The_Ritualists,81
+Ritual_BloodShamen,,The_Ritualists,,,,,,,The_Ritualists,108
+Ritual_Channeler,,The_Ritualists,,,,,,,The_Ritualists,102
+Ritual_Collector,,The_Ritualists,,,,,,,The_Ritualists,45
+Ritual_Creator,,The_Ritualists,,,,,,,The_Ritualists,120
+Ritual_DemonMaster,,The_Ritualists,,,,,,,The_Ritualists,105
+Ritual_DemonWakers,,The_Ritualists,,,,,,,The_Ritualists,84
+Ritual_Doctor,,The_Ritualists,,,,,,,The_Ritualists,78
+Ritual_EarthBreaker,,The_Ritualists,,,,,,,The_Ritualists,114
+Ritual_Enchantress,,The_Ritualists,,,,,,,The_Ritualists,75
+Ritual_Executioner,,The_Ritualists,,,,,,,The_Ritualists,39
+Ritual_Hauntress,,The_Ritualists,,,,,,,The_Ritualists,72
+Ritual_Hunter,,The_Ritualists,,,,,,,The_Ritualists,42
+Ritual_HuntMaster,,The_Ritualists,,,,,,,The_Ritualists,69
+Ritual_LandWalker,,The_Ritualists,,,,,,,The_Ritualists,123
+Ritual_Master,,The_Ritualists,,,,,,,The_Ritualists,90
+Ritual_MindFlayer,,The_Ritualists,,,,,,,The_Ritualists,87
+Ritual_Scout,,The_Ritualists,,,,,,,The_Ritualists,3
+Ritual_Shamen,,The_Ritualists,,,,,,,The_Ritualists,66
+Ritual_SkinFlayer,,The_Ritualists,,,,,,,The_Ritualists,93
+Ritual_SkyScourge,,The_Ritualists,,,,,,,The_Ritualists,96
+Ritual_Summoner,,The_Ritualists,,,,,,,The_Ritualists,60
+Ritual_Tempest,,The_Ritualists,,,,,,,The_Ritualists,63
+Ritual_Visionary,,The_Ritualists,,,,,,,The_Ritualists,99
+Ritual_Warrior,,The_Ritualists,,,,,,,The_Ritualists,6
+Ritual_Tactician ,,,,,,,,,,9
+Ritual_TimeGazer ,,,,,,,,,,36
+Ritual_Maiden ,,,,,,,,,,12
+Ritual_DeathMaiden ,,,,,,,,,,33
+Ritual_VoidWatcher ,,,,,,,,,,30
+Ritual_Expanse ,,,,,,,,,,27
+Ritual_Mauler ,,,,,,,,,,24
+Ritual_WarBeast ,,,,,,,,,,21
+Ritual_YoungBlood ,,,,,,,,,,18
+Ritual_Upstart ,,,,,,,,,,15

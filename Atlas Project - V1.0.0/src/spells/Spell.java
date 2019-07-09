@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import character.Class;
+import java.util.Set;
+
+import character.FactionTypes;
 public class Spell{
 	
-	private Class faction;
+	private FactionTypes faction;
 	private SpellType type;
 	private int pips;
 	private String name;
@@ -16,43 +18,51 @@ public class Spell{
 	private int health;
 	private double resist;
 	private double boost;
-	private List<Class> impactList;
-	public void makeAttackSpell(Class f,String n, double castChance, int d) {
+	private Set<FactionTypes> impactList;
+	//	used for creating spells from names pulled
+	public Spell(String name2) {
+		// TODO Auto-generated constructor stub
+		this.name = name2;
+	}
+	public Spell() {
+		// TODO Auto-generated constructor stub
+	}
+	public void makeAttackSpell(FactionTypes f,String n, double castChance, int d) {
 		this.faction = f;
 		this.type = SpellType.Attack;
 		this.name = n;
-		this.castChance = castChance;
+		this.castChance = castChance*100;
 		this.damage = d;
 	}
-	public void makeShieldSpell(Class f,String n, double resist,List<Class> types) {
-		this.impactList = types;
+	public void makeShieldSpell(FactionTypes f,String n, double resist,Set<FactionTypes> types) {
+		this.setImpactList(types);
 		this.faction = f;
 		this.type = SpellType.Shield;
 		this.name = n;
 		this.castChance = 100;
-		this.resist= resist;
+		this.resist= resist*100.0;
 	}
-	public void makeBladeSpell(Class f,String n, double boost,List<Class> types) {
-		this.impactList = types;
+	public void makeBladeSpell(FactionTypes f,String n, double boost,Set<FactionTypes> types) {
+		this.setImpactList(types);
 		this.faction = f;
 		this.type = SpellType.Blade;
 		this.name = n;
 		this.castChance = 100;
-		this.boost= boost;
+		this.boost= boost*100.0;
 	}
-	public void makeTrapSpell(Class f,String n, double boost,List<Class> types) {
-		this.impactList = types;
+	public void makeTrapSpell(FactionTypes f,String n, double boost,Set<FactionTypes> types) {
+		this.setImpactList(types);
 		this.faction = f;
 		this.type = SpellType.Trap;
 		this.name = n;
 		this.castChance = 100;
-		this.boost= boost;
+		this.boost= boost*100.0;
 	}
-	public void makeHealSpell(Class f,String n, double castChance, int amt) {
+	public void makeHealSpell(FactionTypes f,String n, double castChance, int amt) {
 		this.faction = f;
-		this.type = SpellType.Shield;
+		this.type = SpellType.Heal;
 		this.name = n;
-		this.castChance = castChance;
+		this.castChance = castChance*100;
 		this.health= amt;
 	}
 	public int getDamage() {
@@ -79,10 +89,10 @@ public class Spell{
 	public void setBoost(double boost) {
 		this.boost = boost;
 	}
-	public Class getFaction() {
+	public FactionTypes getFaction() {
 		return faction;
 	}
-	public void setFaction(Class faction) {
+	public void setFaction(FactionTypes faction) {
 		this.faction = faction;
 	}
 	public SpellType getType() {
@@ -108,6 +118,12 @@ public class Spell{
 	}
 	public void setCastChance(double castChance) {
 		this.castChance = castChance;
+	}
+	public Set<FactionTypes> getImpactList() {
+		return impactList;
+	}
+	public void setImpactList(Set<FactionTypes> impactList) {
+		this.impactList = impactList;
 	}
 	
 	

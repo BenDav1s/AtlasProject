@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Jul 08 15:31:17 CDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-016b-d348-9286-000007589a80 
+on database directory C:\Backup of student files\Summer 2019\Atlas project\AtlasProject\Atlas Project - V1.0.0\src\main\resources\db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
+Loaded from file:/C:/Users/davis/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.2+7-LTS
+user.dir=C:\Backup of student files\Summer 2019\Atlas project\AtlasProject\Atlas Project - V1.0.0
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

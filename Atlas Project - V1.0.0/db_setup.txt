@@ -1,0 +1,229 @@
+/* create table 
+create table USERS (
+	User_ID varchar(255) primary key,
+	User_Name varchar(255),
+	User_Password varchar(255),
+	User_Email varchar(255),
+	User_Logged_In BOOLEAN
+);*/
+
+/* insert admins 
+insert into USERS (User_ID,User_Name,User_Password,User_Email,User_Logged_In)
+values ('admin_master','admin','admin_pass','admin@gmail.com',FALSE);
+
+insert into USERS (User_ID,User_Name,User_Password,User_Email,User_Logged_In)
+values ('tester_master','a','a','a@gmail.com',FALSE);
+*/
+/* show table */
+
+
+/* create player table */
+/*
+create table PLAYERS (
+	User_ID varchar(255), 
+	foreign key (User_ID) references USERS(User_ID),
+	Players_ID varchar(255) primary key,
+	Players_Name varchar(255),
+	Players_Faction varchar(255),
+	Players_Level int not null,
+	Players_XP int not null
+);*/
+/* insert admin players */
+/*
+insert into PLAYERS (User_ID,Players_ID,Players_Name,Players_Faction,Players_Level,Players_XP)
+values ('admin_master','admin_player','admin','The_Cult_Of_The_Stars',100,1000);
+
+insert into PLAYERS (User_ID,Players_ID,Players_Name,Players_Faction,Players_Level,Players_XP)
+values ('tester_master','tester_player','tester','The_Cult_Of_The_Stars',0,0);
+*/
+
+
+Deck starterDeck = new Deck(starterSpells);
+				starterDeck.setName("StarterDeck");
+				starterDeck.setSellable(false);
+				starterDeck.setFaction(tempPlayer.getFaction());
+				starterDeck.setWeaponType(ItemType.Deck);
+				starterDeck.setLevelRequirement(0);
+
+/* create player stats table */
+/*
+create table PLAYERS_STATS(
+	Players_ID varchar(255),
+	foreign key (Players_ID) references PLAYERS(Players_ID),
+	Players_Stats_Name varchar(255),
+	Players_Stats_AMT decimal
+);
+*/
+/*
+insert into PLAYERS_STATS (Players_ID,Players_Stats_Name,Players_Stats_AMT)
+values ('admin_player','THE_CULT_OF_THE_STARS_DMG',0.01);
+
+insert into PLAYERS_STATS (Players_ID,Players_Stats_Name,Players_Stats_AMT)
+values ('tester_player','THE_CULT_OF_THE_STARS_DMG',0.01);
+*/
+
+/*
+create table PLAYERS_BACKPACK (
+	Players_ID varchar(255),
+	foreign key (Players_ID) references PLAYERS(Players_ID),
+	Item_Name varchar(255),
+	Item_Count int
+);*/
+
+/*
+insert into PLAYERS_BACKPACK (Players_ID,Item_Name,Item_Count)
+values('admin_player','Swan Song',1);
+insert into PLAYERS_BACKPACK(Players_ID,Item_Name,Item_Count)
+values('tester_player','Swan Song',1);
+*/
+/*
+create table PLAYERS_DECK(
+	Players_ID varchar(255),
+	foreign key (Players_ID) references PLAYERS(Players_ID),
+	Spell_Name varchar(255),
+	Spell_Count int
+);*/
+/*
+insert into PLAYERS_DECK (Players_ID,Spell_Name,Spell_Count)
+values('admin_player','Swan Song',1);
+*/
+/*
+create table SPELLS(
+	Spells_Name varchar(255) primary key,
+	Spells_Faction varchar(255),
+	Spells_Type varchar(255),
+	Spells_Pip_Cost int,
+	Spells_Cast_Chance double,
+	Spells_Heal_AMT double,
+	Spells_DMG_AMT double,
+	Spells_RESIST_AMT double,
+	Spells_BOOST_AMT double
+);
+insert into SPELLS (Spells_Name,Spells_Faction,Spells_Type,Spells_Pip_Cost,Spells_Cast_Chance,Spells_DMG_AMT)
+values ('Swan Song','THE_CULT_OF_THE_STARS','Attack',4,85.0,500);
+*/
+/*
+create table ITEMS(
+	Items_Name varchar(255) primary key,
+	Items_Type varchar(255),
+	Items_Drop_Rate double,
+	Items_Cost INTEGER,
+	Items_Worth INTEGER,
+	Items_Sellable BOOLEAN,
+	Items_Level_REQ INTEGER,
+	Items_Faction varchar(255)
+);
+insert into ITEMS (Items_Name,Items_Type,Items_Drop_Rate,Items_Cost,Items_Worth,Items_Sellable,Items_Level_REQ,Items_Faction)
+values('Swan Song','Helmet',0.03,6000,3000,TRUE,50,'THE_CULT_OF_THE_STARS');
+*/
+/*
+create table ITEMS_STATS(
+	Items_Name varchar(255),
+	foreign key (Items_Name) references ITEMS (Items_Name),
+	Items_Stats_Name varchar(255) primary key,
+	Items_Stats_AMT double
+);
+
+insert into ITEMS_STATS(Items_Name,Items_Stats_Name,Items_Stats_AMT)
+values ('Swan Song','THE_CULT_OF_THE_STARS_DMG',0.05);
+*/
+/*
+create table QUESTS(
+	Quests_Name varchar(255) primary key,
+	Quests_XP int,
+	Quests_GOLD int,
+	Quests_Item_Drops varchar(255),
+	Quests_Next_Quest varchar(255),
+	Quests_Enemies varchar(255)
+);
+
+create table PLAYER_QUEST_STATUS(
+	Players_ID varchar(255),
+	foreign key (Players_ID) references PLAYERS(Players_ID),
+	Quests_Name varchar(255),
+	foreign key (Quests_Name) references QUESTS(Quests_Name),
+	Quests_Status varchar(255)
+);
+
+create table ENEMIES(
+	Enemy_Name varchar(255) primary key,
+	Enemy_Faction varchar(255),
+	Enemy_MAXHP int,
+	Enemy_Drops varchar(255)
+);
+
+create table ENEMY_STATS(
+	Enemy_Name varchar(255),
+	foreign key (Enemy_Name) references ENEMIES(Enemy_Name),
+	Enemy_Stats_Name varchar(255),
+	Enemy_Stats_AMT varchar(255)
+);
+
+create table ENEMY_DECK(
+	Enemy_Name varchar(255),
+	foreign key (Enemy_Name) references ENEMIES(Enemy_Name),
+	Spell_Name varchar(255),
+	Spell_Count int
+);
+*/
+Item starterHelmet = new Item();
+				starterHelmet.setWeaponType(ItemType.Helmet);
+				starterHelmet.setLevelRequirement(0);
+				starterHelmet.setCost(0);
+				starterHelmet.setSellable(false);
+				starterHelmet.setName("StarterHelmet");
+				starterHelmet.setWorth(0);
+				starterHelmet.addEffect(tempPlayer.getFaction().name()+"_DMG", 0.05);
+/* show tables */
+select * FROM USERS;
+select * from PLAYERS;
+select * from PLAYERS_STATS;
+select * from PLAYERS_BACKPACK;
+select * from PLAYERS_DECK;
+select * from SPELLS;
+select * from ITEMS;
+select * from ITEMS_STATS;
+select * from QUESTS;
+
+create table PLAYERS_STATS(
+	Players_ID varchar(255),
+	foreign key (Players_ID) references PLAYERS(Players_ID),
+	Players_Stats_Name varchar(255),
+	Players_Stats_AMT decimal
+);
+create table ITEMS_STATS(
+	Items_Name varchar(255),
+	foreign key (Items_Name) references ITEMS (Items_Name),
+	Items_Stats_Name varchar(255) primary key,
+	Items_Stats_AMT double
+);
+create table PLAYERS (
+	User_ID varchar(255), 
+	foreign key (User_ID) references USERS(User_ID),
+	Players_ID varchar(255) primary key,
+	Players_Name varchar(255),
+	Players_Faction varchar(255),
+	Players_Level int not null,
+	Players_XP int not null
+	Players_Helmet varchar(255),
+	Players_Armor varchar(255)
+);
+SELECT APP.PLAYERS_STATS.PLAYERS_STATS_AMT, APP.ITEMS_STATS.ITEMS_STATS_AMT
+  FROM APP.PLAYERS JOIN APP.PLAYERS_STATS JOIN APP.ITEMS_STATS ON APP.PLAYERS_STATS.PLAYERS_STATS_NAME = APP.ITEMS_STATS.ITEMS_STATS_NAME ON APP.PLAYERS.USER_ID = APP.PLAYERS_STATS.PLAYERS_ID
+    AND APP.ITEMS_STATS.ITEMS_NAME = APP.PLAYERS.PLAYERS_HELMET
+  WHERE APP.PLAYERS.PLAYERS_ID = '6f8f57715090da2632453988d9a1501b'
+
+UPDATE m
+SET m.Foo = f.valsum
+FROM [MASTER] m
+INNER JOIN
+(
+  SELECT ID, CCY, SUM(val) valsum
+  FROM Foos
+  GROUP BY  ID, CCY 
+) f ON m.ID = f.ID AND m.CCY  = f.CCY;
+
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);

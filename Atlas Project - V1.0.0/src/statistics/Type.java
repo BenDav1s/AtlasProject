@@ -1,24 +1,24 @@
 package statistics;
 
-import character.Class;
+import character.FactionTypes;
 
 public enum Type {
-	DMG_BOOST(Class.Generic,0.0),
-	DMG_RESIST(Class.Generic,0.0),
-	Critical_RATING(Class.Generic,0.0),
-	Critical_Block(Class.Generic,0.0),
-	Heal_BOOST(Class.Generic,0.0);
-	
-	private Class type;
+	DMG_BOOST(FactionTypes.Generic,0.0),
+	DMG_RESIST(FactionTypes.Generic,0.0),
+	Critical_RATING(FactionTypes.Generic,0.0),
+	Critical_Block(FactionTypes.Generic,0.0),
+	Heal_BOOST(FactionTypes.Generic,0.0),
+	PIP_CHANCE(FactionTypes.Generic,0.0);
+	private FactionTypes type;
 	private double amt;
-	private Type(Class t, double amt) {
+	private Type(FactionTypes t, double amt) {
 		this.type = t;
 		this.amt = amt;
 	}
-	public Class getType() {
+	public FactionTypes getType() {
 		return this.type;
 	}
-	public void setType(Class t) {
+	public void setType(FactionTypes t) {
 		this.type = t;
 	}
 	public double getAmt() {

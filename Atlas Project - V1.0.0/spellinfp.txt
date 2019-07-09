@@ -1,0 +1,9 @@
+level 1 spells 
+Attack -> The_Called -> Raider_Initiate -> 75% -> x damage
+Attack -> The_Children_Of_The_Mask-> Unborn_Initiate -> 70% -> x damage
+Attack -> The_Collective-> Union_Initiate -> 75% -> x damage
+Attack -> The_Ennead-> Haunted_Initiate -> 80% -> x damage
+Attack -> The_Legion-> Trained_Initiate -> 80% -> x damage
+Attack -> The_Ritualists-> Fallen_Initate -> 85% -> x damage
+Attack -> The_Cult_Of_The_Stars> Cult_Initate -> 85% -> x damage
+

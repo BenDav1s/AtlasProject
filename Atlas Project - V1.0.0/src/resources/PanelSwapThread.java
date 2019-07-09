@@ -1,15 +1,16 @@
 package resources;
-import character.Class;
+import character.FactionTypes;
 import graphics.createAccountPage.CreateAccountPageView;
 import graphics.createAccountPage.FactionLeftPanel;
 import graphics.createAccountPage.FactionRightPanel;
+import graphics.createCharacterPage.CharacterCreationView;
 public class PanelSwapThread extends Thread{
 	private int id;
-	private Class faction;
+	private FactionTypes faction;
 	private CreateAccountPageView view;
-	public PanelSwapThread(int id, Class c,CreateAccountPageView v) {
+	public PanelSwapThread(int id, FactionTypes faction2,CreateAccountPageView v) {
 		this.id = id;
-		this.faction = c;
+		this.faction = faction2;
 		this.view = v;
 	}
 	public void run() {

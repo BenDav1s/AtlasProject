@@ -1,0 +1,48 @@
+﻿Name,Faction,Type,Cost,CastChance,Heal,Damgage,Resist,Boost,TargetFactions,Level req
+Archer_Mystic,The_Called,,,,,,,,The_Called,51
+Bear_Master,The_Called,,,,,,,,The_Called,18
+Berserker,The_Called,,,,,,,,The_Called,27
+Corrupted_Berserker,The_Called,,,,,,,,The_Called,24
+Cursed_Raider,The_Called,,,,,,,,The_Called,21
+Forge_Leader,The_Called,,,,,,,,The_Called,30
+Forger,The_Called,,,,,,,,The_Called,15
+Master_Of_The_Hunt,The_Called,,,,,,,,The_Called,48
+Odin,The_Called,,,,,,,,The_Called,66
+Pit_Warrior,The_Called,,,,,,,,The_Called,33
+Raider,The_Called,,,,,,,,The_Called,36
+Raider_Initiate,The_Called,,,,,,,,The_Called,1
+Raider_Leader,The_Called,,,,,,,,The_Called,54
+Raider_Master,The_Called,,,,,,,,The_Called,57
+Rally_Leader,The_Called,,,,,,,,The_Called,60
+Valkyre_Hunter,The_Called,,,,,,,,The_Called,39
+Valkyre_Initiate ,The_Called,,,,,,,,The_Called,3
+Valkyre_Queen,The_Called,,,,,,,,The_Called,63
+Viking_Assassin,The_Called,,,,,,,,The_Called,12
+Viking_Avatar,The_Called,,,,,,,,The_Called,126
+Viking_Butcher,The_Called,,,,,,,,The_Called,45
+Viking_Creator,The_Called,,,,,,,,The_Called,132
+Viking_Horror,The_Called,,,,,,,,The_Called,129
+Viking_Titan,The_Called,,,,,,,,The_Called,123
+Warpaint,The_Called,,,,,,,,The_Called,9
+Wolf_Hunter,The_Called,,,,,,,,The_Called,6
+Wolf_King,The_Called,,,,,,,,The_Called,42
+Viking_ValleyWatcher,,,,,,,,,,99
+Viking_LoneWolf,,,,,,,,,,90
+Viking_Leviathan,,,,,,,,,,114
+Viking_LastStand,,,,,,,,,,96
+Viking_ForestSerpant,,,,,,,,,,102
+Viking_FortressGuard,,,,,,,,,,87
+Viking_ForestWatcher,,,,,,,,,,78
+Viking_CombatTechnique,,,,,,,,,,84
+Viking_CaveSriders,,,,,,,,,,117
+Viking_Blaster,,,,,,,,,,93
+Viking_Baeloth,,,,,,,,,,105
+Viking_BayGuardian,,,,,,,,,,81
+Viking_BattleCry,,,,,,,,,,75
+Viking_Ancient_Combat,,,,,,,,,,99
+Viking_Ancient,,,,,,,,,,111
+Valkyre_Avatar ,,,,,,,,,,120
+Valkyre_Knight ,,,,,,,,,,66
+Valkyre_LifeLine ,,,,,,,,,,69
+Valkyre_SkyMaiden ,,,,,,,,,,72
+Valkyre_SkyCrusher ,,,,,,,,,,117

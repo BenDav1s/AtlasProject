@@ -1,0 +1,309 @@
+The_Cult_Of_The_Stars, //	future tech 85	support
+	The_Ritualists,	//	demonics 85	life drain
+	The_Collective,	//	victorian era 75	healer support
+	The_Children_Of_The_Mask,	//	mayan 70 all out damage
+	The_Legion,	//	greco - roman 80	tank
+	The_Ennead,	//	egpytians 80	healer
+	The_Called,	//	cold stuff 75	damage support
+
+Generic_Shield
+
+The_Called_Shield
+The_Called_Blade
+The_Called_Trap
+Archer_Mystic 51
+Bear_Master 18
+Berserker 27
+Corrupted_Berserker 24
+Cursed_Raider 21
+Forge_Leader 30
+Forger 15
+Master_Of_The_Hunt 48
+Odin 66
+Pit_Warrior 33
+Raider 36
+Raider_Initiate 1 
+Raider_Leader 54
+Raider_Master 57
+Rally_Leader 60
+Valkyre_Avatar 120
+Valkyre_Hunter 39
+Valkyre_Knight 66
+Valkyre_LifeLine 69
+Valkyre_Initiate 3
+Valkyre_Queen 63
+Valkyre_SkyMaiden 72
+Valkyre_SkyCrusher 117
+Viking_Assassin 12
+Viking_Ancient 111
+Viking_Ancient_Combat 99
+Viking_Avatar 126
+Viking_BattleCry 75
+Viking_BayGuardian 81
+Viking_Baeloth 105
+Viking_Blaster 93
+Viking_Butcher 45
+Viking_CaveStrider 117
+Viking_CombatTechnique 84
+Viking_Creator 132
+Viking_ForestWatcher 78
+Viking_FortressGuard 87
+Viking_ForestSerpant 102
+Viking_Horror 129
+Viking_LastStand 96
+Viking_Leviathan 114
+Viking_LoneWolf 90 
+Viking_Titan 123
+Viking_ValleyWatcher 99
+Warpaint 9 
+Wolf_Hunter 6 
+Wolf_King 42
+
+--------------------------------------------------------------
+The_Children_Of_The_Mask
+The_Children_Of_The_Mask_Shield
+The_Children_Of_The_Mask_Blade
+The_Children_Of_The_Mask_Trap
+Blessed_Child 126
+Call_To_Arms 33
+Call_To_The_End 129
+Corrupted_Ravager 30
+Curse_Of_The_Damned 27
+Mythic_Golem 24
+Unborn_Avatar 126 
+Unborn_Creator 132
+Unborn_CryptGuard 51
+Unborn_Horror 48 
+Unborn_Curse 21
+Unborn_Hunter 3
+Unborn_Initiate 1 
+Unborn_Jungle_Master 6 
+Unborn_Master 45
+Unborn_Mystic 36
+Unborn_Princess 39
+Unborn_Queen 42
+Unborn_Ravager 9 
+Unborn_Scount 12
+Unborn_Shamen 15
+Unborn_Summoner 54
+Unborn_Warrior 18
+23
+need 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99 102 105 108 111 114 117 120 123
+---------------------------------------
+The_Collective
+The_Collective_Shield
+The_Collective_Trap
+The_Collective_Blade
+Call_To_Rally 51
+Curse_Of_The_Fallen 48
+Cursed_Mask 45
+Union_Ambusher 54
+Union_Automaton 57
+Union_Blasters 60
+Union_Builder 42
+Union_Creator 132 
+Union_Doctor 63
+Union_Enchantress 12
+Union_Explorer 15 
+Union_Gunslinger 9 
+Union_Healer 18
+Union_Hunter 21 
+Union_Initiate 1 
+Union_Meowbster 78
+Union_Puppeteer 75
+Union_Rally_Master 24 
+Union_Rebel 66
+Union_Rejected 3 
+Union_Robbers 27
+Union_Rogue 30
+Union_Scourge 6 
+Union_SkyMaster 75
+Union_Summoners 69
+Union_Tempest 33
+Union_Undead 36
+Union_Visionary 72
+Union_Witch_Hunters 39
+Union_SkyPatrol 78
+Union_VoidExplorer 81 
+Dangerous_Expedition 84
+Union_BorderWatch 87
+Union_DepthStrider 90
+Union_DepthGuardian 93
+Union_Riptide 96
+Union_Spark 99
+Union_Foundry 102
+Union_Consumer 105
+Union_SkyScourge 108
+Union_NightStalker 111
+Union_SkyBattle 114
+Union_WorldWalker 117
+Union_ClockTower 120
+Union_SteamMaster 123
+Union_Avatar 126
+Union_Engineer 129
+--------------------------------------------------
+The_Ennead
+The_Ennead_Blade
+The_Ennead_Shield
+The_Ennead_Trap
+Curse_Of_The_Haunted 27
+Haunted_ArmorMaster 57
+Haunted_Avatar 126
+Haunted_Creator 132
+Haunted_Diviner 30
+Haunted_Enchantress 33 
+Haunted_God 54 
+Haunted_Graveborn 3 
+Haunted_Initiate 1
+Haunted_King 6
+Haunted_Master 21 
+Haunted_Mystic 24
+Haunted_Queen 51 
+Haunted_Recognition 48
+Haunted_Rogue 9 
+Haunted_Schemer 42 
+Haunted_Siren 45 
+Haunted_Summoner 36 
+Haunted_Visionary 12
+Haunted_WarMaster 39
+Haunted_Warrior 18 
+Haunted_Wayfarer 15
+Haunted_WorldFlayer 129
+need 60 63 66 69 72 75 78 81 84 87 90 93 96 99 102 105 108 111 114 117 120 123
+22 
+
+
+----------------------------------------------------
+The_Legion
+The_Legion_Trap
+The_Legion_Blade
+The_Legion_Shield
+Call_Of_The_Viper 21
+Call_To_Battle 18 
+Call_To_Serve 15
+Curse_Of_The_Vipers 33
+Trained_Avatar 126
+Trained_Creator 132
+Trained_Hunter 3
+Trained_Initiate 1 
+Trained_Master 12 
+Trained_Pit_Dwellers 24
+Trained_Queen 30 
+Trained_Rally_Master 27
+Trained_Rogue 9
+Trained_SkyMaster 123
+Trained_SkyTitan 129
+Trained_Viper 114 
+Trained_WarMaster 117
+Trained_Warrior 6 
+Viper_Queen 120
+ need 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99 102 105 108 111
+26
+------------------------------------------------------
+The_Ritualists
+The_Ritualists_Shield
+The_Ritualists_Blade
+The_Ritualists_Trap
+Fallen_Hunter 51
+Fallen_Initate 1
+Fallen_Master 54
+Fallen_Summoner 57
+Farseek 48
+Ritual_Avatar 126
+Ritual_Avatar_Of_Creation 132
+Ritual_BalanceMaster 117
+Ritual_BeastTamer 129
+Ritual_BloodMaster 111
+Ritual_BloodSeeker 81
+Ritual_BloodShamen 108
+Ritual_Channeler 102
+Ritual_Collector 45
+Ritual_Creator 120
+Ritual_DemonMaster 105
+Ritual_DemonWakers 84
+Ritual_Doctor 78
+Ritual_EarthBreaker 114
+Ritual_Enchantress 75
+Ritual_Executioner 39
+Ritual_Hauntress 72
+Ritual_Hunter 42 
+Ritual_HuntMaster 69
+Ritual_LandWalker 123 
+Ritual_Master 90 
+Ritual_MindFlayer 87 
+Ritual_Scout 3 
+Ritual_Shamen 66 
+Ritual_SkinFlayer 93
+Ritual_SkyScourge 96
+Ritual_Summoner 60
+Ritual_Tempest 63 
+Ritual_Visionary 99
+Ritual_Warrior 6 
+Ritual_Tactician 9
+Ritual_TimeGazer 36
+Ritual_Maiden 12
+Ritual_DeathMaiden 33
+Ritual_VoidWatcher 30
+Ritual_Expanse 27
+Ritual_Mauler 24
+Ritual_WarBeast 21
+Ritual_YoungBlood 18
+Ritual_Upstart 15
+------------------
+The_Cult_Of_The_Stars
+The_Cult_Of_The_Stars_Trap
+The_Cult_Of_The_Stars_Shield
+The_Cult_Of_The_Stars_Blade
+Cult_Ambushers 57
+Cult_Assassin 21 
+Cult_Avatar 126
+Cult_Avatar_Of_Minds 120
+Cult_BeastMaster 90
+Cult_Blasters 33 
+Cult_BloodMaidens 87 
+Cult_Cleric 99
+Cult_CloudMaster 102
+Cult_Creator 114
+Cult_Daemon 117
+Cult_DeadEye 45
+Cult_Eclipse 129
+Cult_Elemental 72
+Cult_End_Times 60
+Cult_Farseer 69
+Cult_GrandMaster 66 
+Cult_Guide 48
+Cult_Healing 54 
+Cult_Hero 15 
+Cult_Hive_Queen 42 
+Cult_Hunter 63 
+Cult_Initiate 1 
+Cult_LoreMaster 75
+Cult_Master_Of_The_Hunt 78
+Cult_NightSlayer 81 
+Cult_Prismatic 81
+Cult_Sage 12 
+Cult_Schemer 3
+Cult_Scout 6 
+Cult_Scout_Master 9 
+Cult_Shamen 123 
+Cult_SkullCracker 30
+Cult_SkySiren 108
+Cult_SkyTitan 111
+Cult_SkyWatcher 96
+Cult_Slayer 84
+Cult_Supreme 105
+Cult_SwornSword 36
+Cult_Visionary 24 
+Cult_VisionGuide 39
+Cult_Warrior 27
+Cult_Weapons_Master 18
+Cult_WindMaster 93
+Cult_WorldWaker 132
+Friendly_Fire 51
+
+
+
+
+
+
+

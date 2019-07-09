@@ -11,13 +11,10 @@ public class SlideshowThread extends Thread{
 	public SlideshowThread(BackgroundPanel p) {
 		this.panel = p;
 		images = new ArrayList<>();
-		for(int i = 1; i <8;i++) {
+		for(int i = 1; i <10;i++) {
 			images.add("background"+i+".jpg");
 			
 		}
-		images.add("loginpage.jpg");
-		
-		
 	}
 	private void advance() {
 		current = (current+1)%images.size();

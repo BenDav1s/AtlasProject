@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.swing.JFrame;
@@ -16,14 +17,17 @@ import javax.swing.JLayeredPane;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import combat.BountyProcess;
 import combat.CombatProcess;
 import gameRules.GameRules;
 import graphics.PageController;
+import graphics.PageCreator;
 import graphics.combatpage.Pile.PileType;
 import graphics.loginpage.LoginPageController;
 import graphics.loginpage.LoginPageModel;
 import graphics.loginpage.LoginPageView;
 import playerGraphics.ProfileBriefModel;
+import resources.BackgroundMusic;
 import spells.Card;
 import spells.SpellType;
 
@@ -31,15 +35,24 @@ public class CombatPageController extends PageController implements MouseListene
 	/** The previous page. */
 	public static final String BACK = "back";
 	public static final String LOGIN = "login";
+	public static final String PASS = "pass";
+	public static final String QUIT = "quit";
 	/** The logger. */
 	private static Logger logger = Logger.getLogger(CombatPageController.class.getName());
 	
 	private CombatProcess model;
 	private CombatPageView view;
-	
+	private String previousPage;
 	public void launchPage(JFrame mainFrame, String back) {
-		logger.info("Launching login page");
-		model = new CombatProcess(this);
+		logger.info("Launching combat page");
+		setPreviousPage(back);
+		if(back == PageCreator.STORY_MODE) {
+			model = new CombatProcess(this);
+		}
+		else if(back == PageCreator.Bounty_Page){
+			model = new BountyProcess(this);
+		}
+		
 		view = new CombatPageView(this,mainFrame);
 	}
 	
@@ -118,9 +131,9 @@ public class CombatPageController extends PageController implements MouseListene
 					c.getSpell().getType().equals(SpellType.Heal_ALL)||
 					c.getSpell().getType().equals(SpellType.Blade_ALL) ||
 					c.getSpell().getType().equals(SpellType.Shield_ALL) ||
-					c.getSpell().getType().equals(SpellType.Trap_ALL) && c.getSpell().getPips() <= GameRules.activeUser.getPips()) {
+					c.getSpell().getType().equals(SpellType.Trap_ALL) && c.getSpell().getPips() <= GameRules.activeCharacter.getPips()) {
 				
-				model.combatphase(view.tempPile,true);
+				//model.combatphase(view.tempPile,true);
 			}
 			view.getFrame().repaint();
 		}
@@ -132,6 +145,12 @@ public class CombatPageController extends PageController implements MouseListene
 		case LOGIN:	//GraphicsController.processPage(PageCreator.HOME_PAGE, PageCreator.LOGIN_PAGE);
 			CombatProcess p = new CombatProcess(this);
 			p.initgame();
+			break;
+		case PASS:
+			model.combatphase(null, null);
+			break;
+		case QUIT:
+			model.enemyWin();
 			break;
 		}
 	}
@@ -174,6 +193,7 @@ public class CombatPageController extends PageController implements MouseListene
 			// Check if pile can merge with the pile it is dropped on
 			Component temp = null;
 			ArrayList<Pile> droppable = new ArrayList<Pile>();//(view.piles);
+			//	check enemy pile
 			for(Component p : view.getTopColumns().getComponents()) {
 
 				Point pilePos = p.getLocationOnScreen();
@@ -181,21 +201,22 @@ public class CombatPageController extends PageController implements MouseListene
 				r.x = pilePos.x;
 				r.y = pilePos.y;
 		
-				if(r.contains(mousePos) && ((ProfileBriefModel) p).acceptsPile(GameRules.activeUser,view.tempPile)) {
+				if(r.contains(mousePos) && ((ProfileBriefModel) p).acceptsPile(GameRules.activeCharacter,view.tempPile)) {
 					temp = p;
 					match = true;
 					break;
 				}
 			}
+			//	if not cast on enemy, see if cast on friendly
+			//	check friendly pile
 			if(!match) {
 				for(Component p : view.getBotColumns().getComponents()) {
-
 					Point pilePos = p.getLocationOnScreen();
 					Rectangle r = p.getBounds();
 					r.x = pilePos.x;
 					r.y = pilePos.y;
 			
-					if(r.contains(mousePos) && ((ProfileBriefModel) p).acceptsPile(GameRules.activeUser,view.tempPile)) {
+					if(r.contains(mousePos) && ((ProfileBriefModel) p).acceptsPile(GameRules.activeCharacter,view.tempPile)) {
 						temp  = p;
 						match = true;
 						break;
@@ -203,6 +224,26 @@ public class CombatPageController extends PageController implements MouseListene
 				}
 			}
 			if(match) {
+				//	remove from hand
+				List<Pile> tempPiles = new ArrayList<>();
+				int count = 0;
+				for(Component c: view.getColumns().getComponents()) {
+					if(((Pile) c).getBase().getSpell().getName().equals(view.tempPile.base.getSpell().getName())) {
+						
+						count++;
+					}
+					if(count == 1) {
+						count++;
+					}
+					else {
+						tempPiles.add((Pile) c);
+					}
+				}
+				view.getColumns().removeAll();
+				
+				for(Pile p : tempPiles) {
+					view.getColumns().add(p);
+				}
 				model.combatphase(temp,view.tempPile);
 			}
 			// Snap back if no merge is found
@@ -213,13 +254,17 @@ public class CombatPageController extends PageController implements MouseListene
 			view.tempPile = null;
 
 			view.getFrame().repaint();
-			/*
-			if(game.checkWin()) {
-				JOptionPane.showMessageDialog(this, "You won! Congrats!");
-				//reset();
-			}*/
+			
 		}
 	}
 	public void mouseEntered(MouseEvent arg0) {}
 	public void mouseExited(MouseEvent arg0) {}
+
+	public String getPreviousPage() {
+		return previousPage;
+	}
+
+	public void setPreviousPage(String previousPage) {
+		this.previousPage = previousPage;
+	}
 }
